@@ -1,0 +1,13 @@
+html {
+    display: flex;
+    justify-content: center;
+}
+#pantalla_juego {
+    border: 1px solid black;
+}
+h1 {
+    text-align: center;
+}
+.juego {
+    display: none;
+}
