@@ -11,15 +11,15 @@ let juego = new Juego(ancho_juego, alto_juego);
 let ultima_tiempo = 0;
 
 function bucle_juego(tiempo_actual) {
-    let tiempo_delta = tiempo_actual - ultima_tiempo;
-    ultima_tiempo = tiempo_actual;
+	let tiempo_delta = tiempo_actual - ultima_tiempo;
+	ultima_tiempo = tiempo_actual;
 
-    ctx.clearRect(0, 0, ancho_juego, alto_juego);
+	ctx.clearRect(0, 0, ancho_juego, alto_juego);
 
-    juego.actualiza(tiempo_delta);
-    juego.dibuja(ctx);
+	juego.actualiza(tiempo_delta);
+	juego.dibuja(ctx);
 
-    requestAnimationFrame(bucle_juego);
+	requestAnimationFrame(bucle_juego);
 }
 
 requestAnimationFrame(bucle_juego);
