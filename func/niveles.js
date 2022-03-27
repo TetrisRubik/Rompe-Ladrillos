@@ -6,11 +6,12 @@ export function construir_nivel(juego, nivel) {
 	nivel.forEach((fila, indice_fila) => {
 		fila.forEach((ladrillo, indice_ladrillo) => {
 			if (ladrillo === 1) {
+				let dureza = nivel[indice_fila][indice_ladrillo];
 				let posicion = {
 					x: 80 * indice_ladrillo,
 					y: 26 * indice_fila
 				};
-				ladrillos.push(new Ladrillo(juego, posicion));
+				ladrillos.push(new Ladrillo(juego, posicion, dureza));
 			}
 		});
 	});

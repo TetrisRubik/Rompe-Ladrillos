@@ -1,7 +1,8 @@
 import { detecta_colision } from "./colisiones.js";
 
 export default class Ladrillo {
-	constructor(juego, posicion) {
+	constructor(juego, posicion, dureza) {
+		this.dureza = dureza;
 		this.imagen = document.getElementById("ladrillo");
 
 		this.juego = juego;
