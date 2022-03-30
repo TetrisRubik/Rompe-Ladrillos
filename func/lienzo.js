@@ -1,3 +1,5 @@
+//* Aquí se encuentra el bucle central de todo.
+
 import Juego from "./juego.js";
 
 let lienzo = document.getElementById("pantalla_juego");
@@ -10,6 +12,7 @@ let juego = new Juego(ancho_juego, alto_juego);
 
 let ultima_tiempo = 0;
 
+// Bucle de juego donde se renderiza y actualiza todo.
 function bucle_juego(tiempo_actual) {
 	let tiempo_delta = tiempo_actual - ultima_tiempo;
 	ultima_tiempo = tiempo_actual;
