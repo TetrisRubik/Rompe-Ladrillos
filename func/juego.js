@@ -1,8 +1,12 @@
+//* Motor del juego que contiene las instancias y que se encarga de actualizar los niveles y el estado.
+
 import Paleta from "./paleta.js";
 import Pelota from "./pelota.js";
 import { construir_nivel, nivel1, nivel2, nivel3, nivel4 } from "./niveles.js";
 import manejar_entradas from "./entradas.js";
 
+//? Se añadirán más estados.
+// Estados del juego.
 const estado = {
 	pausa: 0,
 	ejecución: 1,
