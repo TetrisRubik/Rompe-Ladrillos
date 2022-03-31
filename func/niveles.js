@@ -1,3 +1,5 @@
+//* Construcción del nivel almacenando los ladrillos en una lista.
+
 import Ladrillo from "./ladrillo.js";
 
 export function construir_nivel(juego, nivel) {
@@ -19,6 +21,7 @@ export function construir_nivel(juego, nivel) {
 	return ladrillos;
 }
 
+//# Todos los niveles serán cambiados más adelante.
 // Niveles de 10x16 ladrillos
 export const nivel1 = [
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
