@@ -1,5 +1,10 @@
+//* Cada tecla es detectada cuando se presiona y cuando se suelta para mejor movimiento.
+//? Se añadirán más teclas para futuras mejoras de la paleta.
+
 export default class manejar_entradas {
 	constructor(paleta, juego) {
+		//# Se deberá cambiar para cuando se presione dos teclas y se suelte la última, la primera se continúe.
+		// Detectar cuando se presiona una tecla de forma que se ejecute solo la última pulsada.
 		document.addEventListener('keydown', (event) => {
 			switch (event.key) {
 				case "ArrowLeft":
@@ -21,6 +26,7 @@ export default class manejar_entradas {
 			}
 		})
 
+		// Detectar cuando se suelta para parar la ejecución.
 		document.addEventListener('keyup', (event) => {
 			switch (event.key) {
 				case "ArrowLeft":

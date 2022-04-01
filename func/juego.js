@@ -1,8 +1,12 @@
+//* Motor del juego que contiene las instancias y que se encarga de actualizar los niveles y el estado.
+
 import Paleta from "./paleta.js";
 import Pelota from "./pelota.js";
 import { construir_nivel, nivel1, nivel2, nivel3, nivel4 } from "./niveles.js";
 import manejar_entradas from "./entradas.js";
 
+//? Se añadirán más estados.
+// Estados del juego.
 const estado = {
 	pausa: 0,
 	ejecución: 1,
@@ -29,6 +33,7 @@ export default class Juego {
 		new manejar_entradas(this.paleta, this);
 	}
 
+	// Inicialización de los objetos y el estado del juego.
 	comienza() {
 		this.ladrillos = construir_nivel(this, this.niveles[this.nivel_actual]);
 		this.objetos = [this.paleta, this.pelota];
@@ -36,6 +41,7 @@ export default class Juego {
 		this.estado = estado.ejecución;
 	}
 
+	// Cambia el estado del juego en función de las vidas, las entradas y los ladrillos, pasando al siguiente estado.
 	actualiza(tiempo_delta) {
 		if (this.vidas === 0) this.estado = estado.fin;
 
@@ -56,9 +62,12 @@ export default class Juego {
 		this.ladrillos = this.ladrillos.filter(objeto => !objeto.eliminado);
 	}
 
+	//# Optimizar haciendo que solo se rendericen los objetos si son visibles.
+	// Renderizado de todos los objetos en función del estado de juego.
 	dibuja(ctx) {
 		[...this.objetos, ...this.ladrillos].forEach((objeto) => objeto.dibuja(ctx));
 
+		// Pausa.
 		if (this.estado === estado.pausa) {
 			ctx.rect(0, 0, this.ancho, this.alto);
 			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
@@ -70,6 +79,7 @@ export default class Juego {
 			ctx.fillText("Pausa", this.ancho / 2, this.alto / 2);
 		}
 
+		// Menú.
 		if (this.estado === estado.menú) {
 			ctx.rect(0, 0, this.ancho, this.alto);
 			ctx.fillStyle = "rgba(0, 0, 0, 1)";
@@ -81,6 +91,7 @@ export default class Juego {
 			ctx.fillText("Presiona ESPACIO para empezar", this.ancho / 2, this.alto / 2);
 		}
 
+		// Fin.
 		if (this.estado === estado.fin) {
 			ctx.rect(0, 0, this.ancho, this.alto);
 			ctx.fillStyle = "rgba(0, 0, 0, 1)";
@@ -93,6 +104,7 @@ export default class Juego {
 		}
 	}
 
+	// Cambia de ejecución a pausa y viceversa.
 	cambiar_pausa() {
 		if (this.estado == estado.pausa) {
 			this.estado = estado.ejecución;

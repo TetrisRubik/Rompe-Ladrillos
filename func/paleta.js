@@ -1,3 +1,5 @@
+//* Paleta dirigida lateralmente por el jugador.
+
 export default class Paleta {
 	constructor(juego) {
 		this.ancho_juego = juego.ancho;
@@ -15,6 +17,7 @@ export default class Paleta {
 		}
 	}
 
+	// Movimientos laterales.
 	mover_izquierda() {
 		this.velocidad = -this.velocidad_max;
 	}
@@ -23,16 +26,21 @@ export default class Paleta {
 		this.velocidad = this.velocidad_max;
 	}
 
+	//# Modificar función para que siga en la otra dirección si anteriormente pulsaste el botón contrario.
+	// Para de mover la paleta.
 	parar() {
 		this.velocidad = 0;
 	}
 
+	//? Se cambiará a una imagen más que un cuadrado.
+	// Renderiza la paleta.
 	dibuja(ctx) {
 		ctx.fillStyle = "#00f";
 		ctx.fillRect(this.posicion.x, this.posicion.y, this.ancho, this.alto);
 	}
-	
-	actualiza(tiempo_delta) {
+
+	// Calcula la posición de la paleta en movimiento.
+	actualiza() {
 		this.posicion.x += this.velocidad;
 		if (this.posicion.x < 10) this.posicion.x = 10;
 		if (this.posicion.x > 800 - this.ancho - 10) this.posicion.x = 800 - this.ancho - 10;
