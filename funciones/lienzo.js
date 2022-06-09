@@ -25,4 +25,4 @@ function bucle_juego(tiempo_actual) {
 	requestAnimationFrame(bucle_juego);
 }
 
-requestAnimationFrame(bucle_juego);
+bucle_juego();
