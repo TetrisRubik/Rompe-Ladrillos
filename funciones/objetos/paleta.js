@@ -1,5 +1,3 @@
-//* Paleta dirigida lateralmente por el jugador.
-
 export default class Paleta {
 	constructor(juego) {
 		this.ancho_juego = juego.ancho;

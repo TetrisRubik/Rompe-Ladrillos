@@ -1,6 +1,4 @@
-//* Principal objeto a destruir que deberá ser golpeado por la pelota.
-
-import { detecta_colision } from "./colisiones.js";
+import { detecta_colision } from "../colisiones.js";
 
 export default class Ladrillo {
 	constructor(juego, posicion, dureza) {

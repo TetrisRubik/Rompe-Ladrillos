@@ -1,6 +1,4 @@
-//* Cada objeto tiene un contorno totalmente rectangular.
-//? Se podría comparar los objetos para darle un contorno especial, como circular a la pelota.
-
+// ¿Se podría comparar los objetos para darle un contorno especial, como circular a la pelota?
 export function detecta_colision(pelota, objeto) {
 	// Límites del contorno de la pelota.
 	let altos_pelota = pelota.posicion.y;

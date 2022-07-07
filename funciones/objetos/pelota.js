@@ -1,6 +1,4 @@
-//* Objeto cinético que colisiona con todo.
-
-import { detecta_colision } from "./colisiones.js";
+import { detecta_colision } from "../colisiones.js";
 
 export default class Pelota {
 	constructor(juego) {

@@ -1,5 +1,3 @@
-//* Aquí se encuentra el bucle central de todo.
-
 import Juego from "./juego.js";
 
 let lienzo = document.getElementById("pantalla_juego");

@@ -1,6 +1,4 @@
-//* Cada tecla es detectada cuando se presiona y cuando se suelta para mejor movimiento.
-//? Se añadirán más teclas para futuras mejoras de la paleta.
-
+// ¿Se añadirán más teclas para futuras mejoras de la paleta?
 export default class manejar_entradas {
 	constructor(paleta, juego) {
 		//# Se deberá cambiar para cuando se presione dos teclas y se suelte la última, la primera se continúe.

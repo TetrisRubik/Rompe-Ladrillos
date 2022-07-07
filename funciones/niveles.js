@@ -1,6 +1,4 @@
-//* Construcción del nivel almacenando los ladrillos en una lista.
-
-import Ladrillo from "./ladrillo.js";
+import Ladrillo from "./objetos/ladrillo.js";
 
 export function construir_nivel(juego, nivel) {
 	let ladrillos = [];
